@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --pri-color: #009FE3;
+}
+
+body{
+    background-color: #F6F6F6;
+}
+
+section{
+    width: 95%;
+    margin: auto;
+    padding: 25px 0;
+}
+
+li{
+    list-style: none;
+}
+
+.non-selectable {
+    -moz-user-select: none; 
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+
+.routes{
+    background-color: #F6F6F6;
+    padding-top: 70px;
+}

@@ -1,0 +1,134 @@
+.navbar-container{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    margin-bottom:100px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(173, 173, 173, 0.63);
+    padding: 0 10px;
+    background-color: #fff;
+    z-index: 100000;
+    margin-top: -70px;
+}
+
+.navbar-container-img{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.navbar-container-img img:nth-child(1){
+    width: 100%;
+    position: absolute;
+    animation: entryLogo .5s;
+}
+
+.navbar-container-img img:nth-child(2){
+    position: absolute;
+    height: 35px;
+    animation: outLogo .5s forwards;
+}
+
+/* Hover logo */
+.navbar-container-img:hover img:nth-child(1){
+    animation: outLogo .5s forwards;
+}
+
+.navbar-container-img:hover img:nth-child(2){
+    display: block;
+    animation: entryLogo .5s;
+}
+
+
+
+
+.navbar-container ul{
+    display: flex;
+    padding: 0;
+    margin-right: 5px;
+    margin: 0;
+}
+
+.navbar-container ul li{
+    margin: 0 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.navbar-container ul .li-input{
+    display: flex;
+    align-items: center;
+    cursor: auto;
+}
+
+
+.navbar-container ul .li-input form{
+    border-bottom: 1px solid #000;
+}
+.navbar-container ul .li-input input{
+    width: 300px;
+    border:none;
+    padding: 5px;
+}
+.navbar-container ul .li-input i{
+    padding: 5px;
+}
+.navbar-container ul .li-input input:focus{
+    border:none;
+    outline: none;
+}
+
+.navbar-container ul .li-input::before{
+    display: none;
+}
+
+.navbar-container ul li::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+}
+
+.navbar-container ul li:hover::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #000;
+    transition: .6s ease;
+}
+
+.navbar-container ul li .nav-link{
+    color: #000;
+    position: relative;
+    z-index: 100;
+}
+
+
+@keyframes entryLogo {
+    0%{
+        left: -500%;
+    }
+
+    100%{
+        left: 0;
+    }
+}
+@keyframes outLogo {
+    0%{
+        left: 0;
+    }
+    
+    100%{
+        left: -1000%;
+    }
+}

@@ -1,0 +1,62 @@
+.producto{
+    display: inline-table;
+}
+
+.card{
+    width: 16rem;
+    max-width: 350px;
+    text-align: left;
+    transition: .8s;
+    cursor: pointer;
+}
+.card:hover{
+    filter: brightness(85%);
+    transition: .8s;
+}
+
+.img-carta{
+    max-width: 75%;
+    max-height: 203px;
+    min-height: 203px;
+    margin: auto;
+    object-fit: contain;
+}
+
+
+.texto-carta{
+    min-height: 65px;
+    max-height: 65px;
+}
+
+.pricing_card{
+    display: inline-block;
+    border-radius: 5px;
+    margin-bottom: 0;
+    font-weight: 500;
+    padding-top: 5px;
+    font-size: 25px;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.price-container{
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ccc;
+}
+
+
+
+@media screen and (max-width: 768px) and (min-width: 550px){
+
+    .card{
+        width: 20rem;
+    }
+
+    .card h5{
+        font-size: 25px;
+    }
+
+    .texto-carta{
+        font-size: 20px;
+    }
+}

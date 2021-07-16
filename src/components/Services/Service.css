@@ -1,0 +1,29 @@
+.services-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.service-container{
+    width: 28%;
+    background-color: #EEEFF4;
+    border-radius: 10px;
+    color: var(--pri-color);
+    padding: 10px 25px;
+    font-family: poppins,sans-serif;
+    min-height: 55vh;
+}
+
+
+.service-container i{
+    font-size: 60px;
+    padding:35px 5px;
+}
+
+.service-container h4{
+    font-weight: 600;
+}
+
+.service-container p{
+    font-weight: 200;
+}
