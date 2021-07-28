@@ -27,7 +27,6 @@ const Header = () => {
 
     const bannerSlider = ()=>{
         //Definimos los banners
-        const banner1 = document.getElementById("banner-1")
         const banner2 = document.getElementById("banner-2")
 
         //Definir los indicadores y asignarle valor inicial
@@ -68,7 +67,7 @@ const Header = () => {
             //
             banner2.classList.add("active")
             setI(i++)
-            if (i == indicadores.length) {
+            if (i === indicadores.length) {
                 i = 0
             }
 
@@ -86,6 +85,7 @@ const Header = () => {
 
     useEffect(()=>{
         bannerSlider();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
     
@@ -94,28 +94,28 @@ const Header = () => {
             <div className="banner" id="banner-1">
                 <div className="text_prod_prin-container">
                     <div>
-                        <h3 id="titleBanner1"></h3>
-                        <p id="textBanner1">
+                        <h3 id="titleBanner1">.</h3>
+                        <p id="textBanner1">.
                         </p>
                     </div>
                 </div>
                 <div className="img_prod_prin-container">
                     <div id="fondo1">
-                        <img id="imagenBanner1" src=""/>
+                        <img id="imagenBanner1" src="" alt=""/>
                     </div>
                 </div>
             </div>
             <div className="banner" id="banner-2">
                 <div className="text_prod_prin-container">
                     <div>
-                        <h3 id="titleBanner2"></h3>
+                        <h3 id="titleBanner2">.</h3>
                         <p id="textBanner2">
                         </p>
                     </div>
                 </div>
                 <div className="img_prod_prin-container">
                     <div id="fondo2">
-                        <img id="imagenBanner2" src=""/>
+                        <img id="imagenBanner2" src="" alt=""/>
                     </div>
                 </div>
             </div>

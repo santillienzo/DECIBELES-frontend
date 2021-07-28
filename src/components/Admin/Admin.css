@@ -1,0 +1,50 @@
+.dashboard-container{
+    display: flex;
+}
+
+.dashboard-container_menu{
+    width: 15%;
+    padding-top: 20px;
+    min-height: calc(100vh - 70px);
+    background-color: #fff;
+    border-right: 1px solid rgba(173, 173, 173, 0.63);
+}
+
+.dashboard-container_menu ul{
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-container_menu ul li .Link{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 15px 0;
+    text-decoration: none;
+    color: #222;
+    transition: .5s;
+}
+.dashboard-container_menu ul li .Link:hover{
+    background-color: #eee;
+    color: #000;
+    transition: .5s;
+}
+
+.dashboard-container_menu ul li .Link i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container_menu ul li .Link p{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.dashboard-container_data{
+    width: 85%;
+    height: 100%;
+    padding: 25px;
+}
+

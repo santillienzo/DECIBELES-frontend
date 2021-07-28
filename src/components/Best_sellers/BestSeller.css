@@ -11,12 +11,12 @@
     height: 10px;
 }
 .bestSeller-container::-webkit-scrollbar-thumb{
-    background: linear-gradient(13deg, #F9D4FF 14%,#C7CEFF 64%);
+    background: linear-gradient(13deg, #ecb0f5 14%,#95a1f7 64%);
     border-radius: 10px;
     transition: .2s;
 }
 .bestSeller-container::-webkit-scrollbar-thumb:hover{
-    background: linear-gradient(13deg, #f8cbff 14%,#b8bff8 64%);
+    background: linear-gradient(13deg, #ecb0f5 14%,#95a1f7 64%);
     transition: .2s;
 
 }

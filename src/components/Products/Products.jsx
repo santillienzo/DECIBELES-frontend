@@ -3,6 +3,7 @@ import { getCategories, getCategoryById, getProducts } from '../../Javascript/ap
 import Article from './Article/Article';
 import './Product.css'
 import {Link} from 'react-router-dom';
+import Footer from '../../layout/footer/Footer';
 
 const Products = (props) => {
 
@@ -14,16 +15,16 @@ const Products = (props) => {
         name: "Todo"
     });
 
-    const [err, setError] = useState(false);
+    const [error, setError] = useState(false);
 
     //Cargar Products
     const loadProducts = () =>{
         getProducts().then(data=>{
             if (data.error) {
                 setError(data.error);
+                console.log(error)
             }else{
                 setProducts(data);
-                // console.log(data)
             }
         })
     }
@@ -61,7 +62,7 @@ const Products = (props) => {
     }
 
     const returnProduct =(category, product, i)=>{
-        if (category == product.category._id) {
+        if (category === product.category._id) {
             return(
                 <Article key={i} product={product}/>
             )
@@ -77,9 +78,11 @@ const Products = (props) => {
         loadProducts();
         loadCategories();
         handleCategory(categoryId);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props])
 
     return (
+        <>
         <div className="products-container">
             <div className="products_category-container">
                 <div className="product-spaceBox"></div>
@@ -104,8 +107,9 @@ const Products = (props) => {
                     }
                 </div>
             </div>
-
         </div>
+        <Footer/>
+        </>
     );
 };
 

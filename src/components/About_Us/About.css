@@ -1,0 +1,33 @@
+#nosotros{
+}
+
+.about-container{
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-container .about-container-info{
+    width: 50%;
+    padding-right: 15px;
+}
+
+.about-container .about-container-info h5{
+    font-family: poppins, sans-serif;
+}
+
+.about-container .about-container-info img{
+    width: 100%;
+}
+
+.about-container .about-container-img{
+    background-color: red;
+    width: 45%;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.about-container .about-container-img img{
+    width: 100%;
+    object-fit: contain;
+}

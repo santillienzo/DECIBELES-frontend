@@ -1,0 +1,99 @@
+.product_section{
+    padding: 0;
+}
+
+.backLinks-container{
+    padding: 15px 0;
+}
+
+.backLinks-container a{
+    text-decoration: none;
+}
+
+.backLinks-container i{
+    margin: 0 10px;
+    font-size: 12px;
+}
+
+.product-info-container{
+    display: flex;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 0px 1px 0px #353535;
+-webkit-box-shadow: 0px 0px 1px 0px #353535;
+-moz-box-shadow: 0px 0px 1px 0px #353535;
+}
+
+.product-info-img{
+    width: 65%;
+}
+
+.product-info-img img{
+    width: 100%;
+    min-height: 520px;
+    max-height: 520px;
+    object-fit: contain;
+}
+
+.product-info-data{
+    width: 35%;
+    padding: 5em 1em 0 1em;
+    font-family: poppins,sans-serif;
+}
+
+.product-info-data .price{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 2em;
+    font-weight: 400;
+    color: #000;
+}
+
+.product-info-data form{
+    width: 100%;
+}
+
+.product-info-data input{
+    width: 50px;
+}
+
+.btn-submit-article{
+    background: var(--pri-color);
+    color: #fff;
+    /* font-size: ; */
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.product-info-description{
+    width: 100%;
+}
+
+.product-info-description h5{
+    padding: 15px;
+    font-size: 25px;
+}
+
+.product-info-description_item{
+    display: flex;
+}
+
+
+.product-info-description_item h6,
+.product-info-description_item p{
+    padding: 15px;
+}
+
+.product-info-description_item h6{
+    font-size: 20px;
+    width: 35%;
+}
+
+.product-info-description_item p{
+    border-left: 1px solid #ccc;
+    width: 65%;
+}

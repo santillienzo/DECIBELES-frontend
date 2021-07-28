@@ -12,6 +12,7 @@ const BestSeller = () => {
         getProducts().then(data=>{
             if (data.error) {
                 setError(data.error);
+                console.log(err)
             }else{
                 setProducts(data);
                 // console.log(data)
@@ -21,6 +22,7 @@ const BestSeller = () => {
 
     useEffect(()=>{
         loadProducts();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -29,7 +31,7 @@ const BestSeller = () => {
             <div className="bestSeller-container">
                 {
                     products.map((product, i)=>( //Renderizamos los productos
-                        <Article product={product}/>
+                        <Article product={product} key={i}/>
                     ))
                 }
                 

@@ -9,20 +9,20 @@
 
 .products_product-container{
     width: 82%;
-    border-left: 1px solid #ccc;
 }
 
 .product-box{
+    /* border-left: 1px solid #ccc; */
     padding-left: 10px;
     padding-top: 10px;
 }
 
 .product-box-category{
     padding-top: 10px;
-    position: sticky;
-    position: -webkit-sticky;
     top: 70px;
 }
+
+
 
 .product-spaceBox{
     height: 5em;
@@ -35,12 +35,14 @@
     bottom: 0;
     left: 10px;
     font-family: roboto, sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 .products_category-container li{
-    list-style: square;
-    font-family: roboto, sans-serif;
+    font-family: poppins, sans-serif;
     color: var(--pri-color);
+    margin-bottom: 15px;
 }
 
 .products_category-container .Link{ 

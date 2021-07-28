@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { API } from '../../../config';
 import './Article.css'
 
 const Article = ({product}) => {
     return (
-        <div className="producto non-selectable">
+        <Link to={`/products/view/${product._id}`} className="producto non-selectable">
             <div className="card wow animate__animated animate__fadeIn" >
                 <img src={`${API}/products/photo/${product._id}`} className="card-img-top img-carta" alt="..." />
                 <div className="card-body">
@@ -15,7 +16,7 @@ const Article = ({product}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 

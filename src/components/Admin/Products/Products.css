@@ -1,0 +1,103 @@
+.adminProduct_container{
+    padding: 0px;
+}
+
+.adminProduct_container-title{
+    font-family: poppins, sans-serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.adminProduct_container-section{
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 1px 0px #6B6B6B;
+}
+
+.adminProduct_container-section_title{
+    font-family: poppins;
+    width: max-content;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.adminProduct_container-section_title h5{
+    position: relative;
+    margin-left: 10px;
+}
+.adminProduct_container-section_title h5::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: -5px;
+    width: 2em;
+    border-bottom: 1px solid #000;
+}
+
+.adminProduct_productsBox{
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #fcfcfc;
+}
+.title_adminProduct{
+    background-color: #041a3de3;
+    color: #eee;
+    border-radius: 5px;
+    cursor: auto !important;
+}
+.title_adminProduct:hover{
+    background-color: #041a3de3 !important;
+}
+
+.adminProduct_productsBox_product{
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+    transition: .5s;
+    cursor: pointer;
+}
+.adminProduct_productsBox_product:hover{
+    background-color: #ddd;
+    transition: .5s;
+}
+
+.productsBox_product_INPQC{
+    display: grid;
+    grid-template-columns: 10% 50% 10% 10% 20%;
+    max-height: 52px;
+    overflow: hidden;
+}
+.productsBox_product_I{
+    padding: 5px;
+}
+.productsBox_product_I img{
+    width: 50%;
+    max-width: 50%;
+    object-fit: contain;
+    min-height: 50px;
+    max-height: 50px;
+}
+.productsBox_product_N{
+    overflow: hidden;
+    text-align: right;
+}
+.productsBox_product_N p{
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: right;
+    margin: 0;
+}
+.productsBox_product_description{
+    display: none;
+    padding: 10px;
+}
+
+.productsBox_product_child{
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+    align-items: center;
+}

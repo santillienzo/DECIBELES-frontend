@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import logo from '../../assets/logo/logo.png';
-import logocompleto from '../../assets/logo/logocompleto.png';
-import tipografia from '../../assets/logo/tipografia.png';
+import React, {  useState } from 'react';
+import {isAuthenticate} from '../../Javascript/apiCore'
 
 import './NavBarMenu.css'
 
@@ -13,10 +11,30 @@ import {
     Switch,
     Link as LinkRecharge 
 } from 'react-router-dom'
+import logo from '../../assets/logo/logo.png';
+import tipografia from '../../assets/logo/tipografia.png';
 
 const NavBarMenu = () => {
+    const user = isAuthenticate().user;
 
-    
+
+    const renderIcon = () =>{
+        if (isAuthenticate()) {
+            return (
+                <li className="nav-icon">
+                    <LinkRecharge to={`/account/profile/${user._id}`} className="nav-link non-selectable"><i className="far fa-user"></i></LinkRecharge>
+                </li>
+            )
+        }else{
+            return(
+                <li className="nav-icon">
+                    <LinkRecharge to="/account/login" className="nav-link non-selectable"><i className="fas fa-sign-in-alt"></i></LinkRecharge>
+                </li>
+            )
+        }
+    }
+
+
 
     return (
         <nav className="navbar-container" id="navbar">
@@ -27,7 +45,7 @@ const NavBarMenu = () => {
                         <li className="li-input">
                             <form action="">
                                 <input type="text" placeholder="Buscar..."/>
-                                <i class="fas fa-search"></i>
+                                <i className="fas fa-search"></i>
                             </form>
                         </li>
                         <li className="nav-item">
@@ -40,10 +58,14 @@ const NavBarMenu = () => {
                             <LinkScroll to="servicios" className="nav-link non-selectable" smooth={true} duration={5}>Servicios</LinkScroll>
                         </li>
                         <li className="nav-item">
-                            <LinkScroll to="nosotros" className="nav-link non-selectable" smooth={true} duration={5}>Nosotros</LinkScroll>
+                            <LinkRecharge to="/about" className="nav-link non-selectable">Nosotros</LinkRecharge>
                         </li>
                         <li className="nav-item">
                             <LinkScroll to="contacto" className="nav-link non-selectable" smooth={true} duration={5}>Contacto</LinkScroll>
+                        </li>
+                        {renderIcon()}
+                        <li className="nav-icon">
+                            <LinkRecharge to="/cart" className="nav-link non-selectable"><i className="fas fa-shopping-cart"></i></LinkRecharge>
                         </li>
                     </ul>
                 </Route>
@@ -52,7 +74,7 @@ const NavBarMenu = () => {
                         <li className="li-input">
                             <form action="">
                                 <input type="text" placeholder="Buscar..."/>
-                                <i class="fas fa-search"></i>
+                                <i className="fas fa-search"></i>
                             </form>
                         </li>
                         <li className="nav-item">
@@ -69,6 +91,10 @@ const NavBarMenu = () => {
                         </li>
                         <li className="nav-item">
                             <LinkRecharge to="/contact" className="nav-link non-selectable" smooth={true} duration={5}>Contacto</LinkRecharge>
+                        </li>
+                        {renderIcon()}
+                        <li className="nav-icon">
+                            <LinkRecharge to="/cart" className="nav-link non-selectable"><i className="fas fa-shopping-cart"></i></LinkRecharge>
                         </li>
                     </ul>
                 </Route>

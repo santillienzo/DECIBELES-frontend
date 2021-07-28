@@ -1,12 +1,12 @@
 .navbar-container{
     display: flex;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     margin-bottom:100px;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(173, 173, 173, 0.63);
-    padding: 0 10px;
+    padding: 0 20px;
     background-color: #fff;
     z-index: 100000;
     margin-top: -70px;
@@ -54,12 +54,7 @@
     margin: 0;
 }
 
-.navbar-container ul li{
-    margin: 0 15px;
-    cursor: pointer;
-    position: relative;
-}
-
+/* NAV-INPUT */
 .navbar-container ul .li-input{
     display: flex;
     align-items: center;
@@ -87,13 +82,22 @@
     display: none;
 }
 
+/* NAV-ITEM */
+.navbar-container ul li{
+    margin: 0 15px;
+    cursor: pointer;
+    position: relative;
+}
+
 .navbar-container ul li::before{
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 0;
+    width: 0%;
     height: 100%;
+    border-bottom: 1px solid transparent;
+    transition: .3s ease;
 }
 
 .navbar-container ul li:hover::before{
@@ -111,6 +115,52 @@
     color: #000;
     position: relative;
     z-index: 100;
+}
+
+/* NAV-ICON */
+.navbar-container ul .nav-icon{
+    margin: 0 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.navbar-container ul .nav-icon::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+}
+
+.navbar-container ul .nav-icon:hover::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #000;
+    transition: .6s ease;
+}
+
+.navbar-container ul .nav-icon .nav-link{
+    color: #000;
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-container ul .nav-icon .nav-link i{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    margin-top: -10px;
+    left: 50%;
+    margin-left: -10px;
+    font-size: 20px;
 }
 
 

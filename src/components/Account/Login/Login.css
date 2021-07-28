@@ -1,0 +1,103 @@
+.login-container{
+    width: 55%;
+    margin: auto;
+    background-color: #fff;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow:  0px 0px 2px 0px #333;
+}
+
+.login-container_title{
+    width: 100%;
+    text-align: center;
+}
+
+.login-container_session{
+    width: 100%;
+}
+
+
+.login-container_session-form{
+    width: 100%;
+}
+
+.login-container_session-form button{
+    background-color: var(--pri-color);
+    border: none;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    font-family: poppins, sans-serif;
+}
+
+.login-container_session-form p{
+    color: var(--pri-color);
+    cursor: pointer;
+    width: max-content;
+    margin: 15px auto;
+    position: relative;
+    font-family: poppins, sans-serif;
+}
+
+
+.login-divisor{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+}
+
+.login-divisor::before{
+    content: '';
+    position: absolute;
+    width: 48%;
+    height: 1px;
+    left: 0;
+    top: 50%;
+    z-index: 1000;
+    background-color: #555;
+}
+.login-divisor::after{
+    content: '';
+    position: absolute;
+    width: 48%;
+    height: 1px;
+    right: 0;
+    top: 50%;
+    z-index: 1000;
+    background-color: #555;
+}
+
+.login-container_session-socialMedia{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.login-container_session-socialMedia button{
+    width: 50%;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.login-container_session-socialMedia .btn-google{
+    background-color: #F5414B;
+    color: #fff;
+    margin-right: 5px;
+}
+.login-container_session-socialMedia .btn-facebook{
+    background-color: #48649F;
+    color: #fff;
+}
+
+.login-container_session-socialMedia button p{
+    margin: 0;
+    margin-left: 10px;
+    font-family: poppins, sans-serif;
+}
