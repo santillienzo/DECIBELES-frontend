@@ -1,0 +1,116 @@
+.addProductModal-background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(46, 46, 46, 0.507);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addProductModal-container{
+    background-color: #fff;
+    width: 75vw;
+    margin: auto;
+    padding: 1em;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px 0px #6B6B6B;
+}
+
+.addProductModal-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.addProductModal-contain > h4{
+    font-family: poppins, sans-serif;
+    position: relative;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #000;
+}
+
+.addProductModal-contain-formInputs{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-column-gap: 1%;
+}
+
+.addProductModal-contain-formInputs-section{
+    padding: 0 15px;
+}
+
+.addProductModal-contain-formInputs-section > input,
+.addProductModal-contain-formInputs-section > textarea,
+.addProductModal-contain-formInputs-section > select,
+.addProductModal-contain-formInputs-section > .input_width_label{
+    margin-bottom: 5px;
+    width: 100%;
+    resize: none;
+    padding: 5px;
+    border: 1px solid #bbb;
+    outline: none;
+}
+.addProductModal-contain-formInputs-section > input:focus,
+.addProductModal-contain-formInputs-section > textarea:focus,
+.addProductModal-contain-formInputs-section > select:focus{
+    border: 1px solid var(--pri-color);
+    color: var(--pri-color);
+}
+.addProductModal-contain-formInputs-section > input::placeholder,
+.addProductModal-contain-formInputs-section > textarea::placeholder,
+.addProductModal-contain-formInputs-section > select::placeholder{
+    color: #777;
+}
+
+.input_width_label{
+    display: flex;
+    align-items: center;
+    border: none !important;
+    padding: 0 !important;
+}
+.input_width_label label{
+    margin-right: 10px;
+}
+
+.input_width_label #file{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.input_width_label label[for="file"] {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--pri-color);
+    background-color: #fff;
+    border: 1px solid var(--pri-color);
+    display: inline-block;
+    transition: all .5s;
+    cursor: pointer;
+    padding: 10px !important;
+    text-transform: uppercase;
+    width: fit-content;
+    text-align: center;
+    margin: 0 !important;
+    border-radius: 10px;
+    width: 100%;
+}
+.input_width_label label[for="file"] i{
+    margin-right: 10px;
+}
+
+.addBtn-formAdd{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}

@@ -5,7 +5,7 @@ import Article from '../Products/Article/Article';
 import { getProducts } from '../../Javascript/apiCore';
 
 const BestSeller = () => {
-    const [products, setProducts] = useState([]);
+    const [productsBestSeller, setProductsBestSeller] = useState([]);
     const [err, setError] = useState(false);
     
     const loadProducts = () =>{
@@ -14,8 +14,8 @@ const BestSeller = () => {
                 setError(data.error);
                 console.log(err)
             }else{
-                setProducts(data);
-                // console.log(data)
+                const result = data.filter(product => product.is_BestSeller == true)
+                setProductsBestSeller(result);
             }
         })
     }
@@ -30,7 +30,7 @@ const BestSeller = () => {
             <Title title={"Más vendidos"}/>
             <div className="bestSeller-container">
                 {
-                    products.map((product, i)=>( //Renderizamos los productos
+                    productsBestSeller.map((product, i)=>( //Renderizamos los productos
                         <Article product={product} key={i}/>
                     ))
                 }

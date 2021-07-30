@@ -6,27 +6,11 @@
 
 :root{
     --pri-color: #009FE3;
+    --pri-btnAdd: rgb(5, 145, 68);
 }
 
 body{
     background-color: #F6F6F6;
-}
-body::-webkit-scrollbar{
-    width: 10px;
-    height: 10px;
-}
-body::-webkit-scrollbar-thumb{
-    background: linear-gradient(13deg, #ecb0f5 14%,#95a1f7 64%);
-    transition: .2s;
-}
-body::-webkit-scrollbar-thumb:hover{
-    background: linear-gradient(13deg, #ecb0f5 14%,#95a1f7 64%);
-    transition: .2s;
-
-}
-body::-webkit-scrollbar-track{
-    background: #ccc;
-    box-shadow: inset 7px 10px 12px 0px #F0F0F0;
 }
 
 section{
@@ -52,4 +36,36 @@ li{
     padding-bottom: 50px;
     min-height: 100vh;
     position: relative;
+}
+
+.addBtn{
+    display: flex;
+    align-items: center;
+    width: max-content;
+    border: 2px solid var(--pri-btnAdd);
+    padding: 3px 5px;
+    cursor: pointer;
+    color: var(--pri-btnAdd);
+    border-radius: 10px;
+    transition: .5s;
+    -moz-user-select: none; 
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+    background-color: #fff;
+}
+.addBtn:hover{
+    background-color: var(--pri-btnAdd);
+    color: #fff;
+    transition: .5s;
+}
+.addBtn:active{
+    transform: scale(.9);
+    /* transition: .5s; */
+}
+
+.addBtn p{
+    margin: 0;
+    margin-left: 5px;
+    font-family: poppins;
 }

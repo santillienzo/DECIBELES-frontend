@@ -14,6 +14,7 @@
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0px 0px 1px 0px #6B6B6B;
+    position: relative;
 }
 
 .adminProduct_container-section_title{
@@ -38,6 +39,12 @@
     border-bottom: 1px solid #000;
 }
 
+.addBtn-products{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
 .adminProduct_productsBox{
     border-radius: 10px;
     padding: 5px;
@@ -46,7 +53,7 @@
 .title_adminProduct{
     background-color: #041a3de3;
     color: #eee;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: auto !important;
 }
 .title_adminProduct:hover{
@@ -63,6 +70,7 @@
     background-color: #ddd;
     transition: .5s;
 }
+
 
 .productsBox_product_INPQC{
     display: grid;
@@ -93,11 +101,21 @@
 .productsBox_product_description{
     display: none;
     padding: 10px;
+    background-color: #333;
+    color: #fff;
+    transition: .5s;
+    border-radius: 0 10px 10px 0;
+    margin-top: 10px;
+    border-left: 5px solid #777;
+}
+.adminProduct_productsBox_product:hover .productsBox_product_description{
+    background-color: #333;
+    color: #fff;
+    border-left: 5px solid #666;
 }
 
 .productsBox_product_child{
     display: flex;
     justify-content: center;
-    /* text-align: center; */
     align-items: center;
 }

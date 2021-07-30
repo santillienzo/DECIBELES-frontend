@@ -1,76 +1,79 @@
 import React, {useEffect, useState} from 'react';
-import imagenes from './imagenes';
 import './Header.css'
+import { getProducts } from '../../Javascript/apiCore';
+import { API } from '../../config';
 
 const Header = () => {
     let [i, setI] = useState(1);
-    let bannerObjects= [
-        {
-            name:"NOGA STORMER",
-            description: "Poderoso Gabinete Gamer con 3 Coolers con LEDS rojos.Contiene 1 Puerto USB 3.0, 2 Puertos USB 2.0 y conexiones miniplug para Auriculares y Mic. <br/>Posee 2 paneles de vidrio tonalizados. <br/>Incluye Fuente de Alimentación de 600W.",
-            photo: imagenes.bannerPcGamer,
-            color: "#a61414b9"
-        },
-        {
-            name:"PANTALLA SAMSUNG",
-            description: "Los TV QLED de Samsung están compuestos de materiales inorgánicos que brindan una imagen coherente, brillante y vívida durante años.",
-            photo: imagenes.bannerMonitor,
-            color: "#a0a2a165"
-        },
-        {
-            name:"EQUIPO DE SONIDO",
-            description: "Lleva tus fiestas a otro nivel con este potente sistema de sonido compacto. Siente el ritmo de tus pistas favoritas con tweeters de alta eficiencia y JET BASS BOOSTER.",
-            photo: imagenes.bannerSonido,
-            color: "#29aae24f"
-        },
-    ]
+    const [productsBanner, setProductsBanner] = useState([]);
+    const [error, setError] = useState();
+    
 
-    const bannerSlider = ()=>{
+    
+
+    const loadProductsBanner = () =>{
+        getProducts().then(data =>{
+            if(data.error){
+                setError(data.error);
+                console.log(error);
+            }else{
+                const result = data.filter(product => product.is_banner == true)
+                setProductsBanner(result);
+            }
+        })
+    }
+
+    
+
+
+    const bannerSlider = async()=>{
         //Definimos los banners
         const banner2 = document.getElementById("banner-2")
-
+        
         //Definir los indicadores y asignarle valor inicial
         const indicadores = document.querySelectorAll('.indi')
-        indicadores[0].classList.add("indi-sel")
+        await indicadores[0].classList.add("indi-sel")
         
         //Definimos los títulos que va a tener y el objeto título
         let title1 = document.getElementById("titleBanner1")
         let title2 = document.getElementById("titleBanner2")
-        title1.innerHTML = bannerObjects[0].name;
+        console.log(productsBanner)
+        title1.innerHTML = await productsBanner[0].name;
+        
         
         //Definimos el texto que tendra la imagen y el objeto texto
         let texto1 = document.getElementById("textBanner1")
         let texto2 = document.getElementById("textBanner2")
-        texto1.innerHTML = bannerObjects[0].description;
+        texto1.innerHTML = productsBanner[0].description_Banner;
         
         //Definimos las imagenes
         var img1 = document.getElementById("imagenBanner1")
         var img2 = document.getElementById("imagenBanner2")
-        img1.src = bannerObjects[0].photo;
-
+        img1.src = `${API}/products/photo/${productsBanner[0]._id}`; //***************************** */
+        
         //Definimos los fondos
         let fondo1 = document.getElementById("fondo1")
         let fondo2 = document.getElementById("fondo2")
-        fondo1.style.backgroundColor = bannerObjects[0].color;
-
-
+        fondo1.style.backgroundColor = productsBanner[0].color;
+        
+        
         const switchBanner = ()=>{
-            img2.src = bannerObjects[i].photo;
-            title2.innerHTML = bannerObjects[i].name;
-            texto2.innerHTML = bannerObjects[i].description;
-            fondo2.style.backgroundColor = bannerObjects[i].color;
+            img2.src = `${API}/products/photo/${productsBanner[i]._id}`;; //************************** */
+            title2.innerHTML = productsBanner[i].name;
+            texto2.innerHTML = productsBanner[i].description_Banner;
+            fondo2.style.backgroundColor = productsBanner[i].color;
             //Definimos el indicador actual y manipulamos las clases
             const indicadorActual = indicadores[i]
             Array.from(indicadores).forEach(cir => cir.classList.remove("indi-sel"))
             indicadorActual.classList.add("indi-sel")
-
+            
             //
             banner2.classList.add("active")
             setI(i++)
             if (i === indicadores.length) {
                 i = 0
             }
-
+            
             setTimeout(()=>{
                 img1.src = img2.src
                 title1.innerHTML = title2.textContent
@@ -82,12 +85,18 @@ const Header = () => {
         
         window.setInterval(switchBanner,5000);
     }
-
+    
+    
     useEffect(()=>{
-        bannerSlider();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[]);
+        if (productsBanner.length === 0) {
+            loadProductsBanner();
+        }else{
+            bannerSlider();
+        }
 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[productsBanner]);
+    
     
     return (
         <div className="prod_principal-container" id="inicio">
@@ -121,8 +130,8 @@ const Header = () => {
             </div>
             <div className="indicadores">
             {
-                bannerObjects.map((object,i)=>(
-                    <img src={object.photo}  alt=""  key={i} className="indi" />
+                productsBanner.map((object,i)=>(
+                    <img src={`${API}/products/photo/${object._id}`}  alt=""  key={i} className="indi" />
                 ))
             }
             </div>

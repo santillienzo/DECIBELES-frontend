@@ -1,5 +1,6 @@
 import {API} from '../config';
 
+
 export const getProducts = () =>{
     return fetch(
         `${API}/products/products`,
@@ -105,7 +106,7 @@ export const isAuthenticate = ()=>{
     }
 
     if(localStorage.getItem('jwt')){
-        console.log(JSON.parse(localStorage.getItem('jwt')))
+        // console.log(JSON.parse(localStorage.getItem('jwt')))
         return JSON.parse(localStorage.getItem('jwt'));
     }
 
